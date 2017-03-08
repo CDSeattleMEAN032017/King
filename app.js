@@ -27,9 +27,9 @@ var server = http.createServer(function (request, response){
     }
 });
 // tell your server which port to run on
-server.listen(6789);
+server.listen(8000);
 // print to terminal window
-console.log("Running in localhost at port 6789");
+console.log("Running in localhost at port 8000");
 var my_module = require('./my_module')();     //notice the extra invocation parentheses!
 console.log(my_module);
 my_module.greet();
