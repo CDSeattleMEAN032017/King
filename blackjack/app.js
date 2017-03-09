@@ -35,9 +35,51 @@ var server = http.createServer(function (request, response){
              response.end();
          });
     }
+    else if (request.url === "/dealer.js") {
+         fs.readFile('dealer.js', 'utf8', function (errors, contents){
+             response.writeHead(200, {'Content-Type': 'text/javascript'});
+             response.write(contents);
+             response.end();
+         });
+    }
+    else if (request.url === "/game.js") {
+         fs.readFile('game.js', 'utf8', function (errors, contents){
+             response.writeHead(200, {'Content-Type': 'text/javascript'});
+             response.write(contents);
+             response.end();
+         });
+    }
+    else if (request.url === "/templates.js") {
+         fs.readFile('templates.js', 'utf8', function (errors, contents){
+             response.writeHead(200, {'Content-Type': 'text/javascript'});
+             response.write(contents);
+             response.end();
+         });
+    }
     else if (request.url === "/main.js") {
          fs.readFile('main.js', 'utf8', function (errors, contents){
              response.writeHead(200, {'Content-Type': 'text/javascript'});
+             response.write(contents);
+             response.end();
+         });
+    }
+    // else if (request.url === "/bower_components/skeleton/css/normalize.css") {
+    //      fs.readFile('normalize.css', 'utf8', function (errors, contents){
+    //          response.writeHead(200, {'Content-Type': 'text/css'});
+    //          response.write(contents);
+    //          response.end();
+    //      });
+    // }
+    // else if (request.url === "/bower_components/skeleton/css/skeleton.css") {
+    //      fs.readFile('skeleton.css', 'utf8', function (errors, contents){
+    //          response.writeHead(200, {'Content-Type': 'text/css'});
+    //          response.write(contents);
+    //          response.end();
+    //      });
+    // }
+    else if (request.url === "/style.css") {
+         fs.readFile('style.css', 'utf8', function (errors, contents){
+             response.writeHead(200, {'Content-Type': 'text/css'});
              response.write(contents);
              response.end();
          });
@@ -51,7 +93,3 @@ var server = http.createServer(function (request, response){
 server.listen(8000);
 // print to terminal window
 console.log("Running in localhost at port 8000");
-// var my_module = require('./my_module')();     //notice the extra invocation parentheses!
-// console.log(my_module);
-// my_module.greet();
-// my_module.add(5,6);
