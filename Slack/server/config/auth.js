@@ -6,7 +6,7 @@ var Users = mongoose.model("users");
 
 module.exports = function(app, flash, passport) {
 
-	var uristring = 'mongodb://jordan:Jbblaine3@ds011168.mongolab.com:11168/discussion-boards';
+	var uristring = 'mongodb://127.0.0.1:27017/slack';
 
 	app.use(session({
 		store: new MongoStore({

@@ -1,6 +1,6 @@
 {
   "name": "SlackInMean",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "Web app built with Node, Express, and Angular.",
   "repository": {
     "type": "git",

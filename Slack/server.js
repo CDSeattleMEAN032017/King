@@ -1,6 +1,7 @@
 const express = require("express");
 const path = require("path");
 const app = express();
+var PORT = 8000
 const passport = require('passport');
 const bodyParser = require("body-parser");
 const cookieParser = require('cookie-parser');
@@ -20,6 +21,6 @@ require('./server/config/auth.js')(app, flash, passport);
 
 require('./server/config/routes.js')(app, flash, passport);
 
-const server = app.listen(8000, function() {
-	console.log("Server listening on port 8000");
+const server = app.listen(PORT, function() {
+	console.log(`Server Listening on port ${PORT}`)
 });
