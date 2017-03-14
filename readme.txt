@@ -24,6 +24,8 @@ Step 3
 npm install express --save
 npm install ejs --save
 npm install body-parser --save
+npm install cookie-parser --save
+npm install mongoose --save
 
 sudo apt install mongodb-clients
 ./mongod --dbpath="c:\data\db" --rest
@@ -117,3 +119,6 @@ db.adminCommand({setParameter:true,textSearchEnabled:true})
 ./mongod --setParameter textSearchEnabled=true
 db.posts.ensureIndex({post_text:"text"})
 db.posts.getIndexes()
+
+CLIENT_ID=784321585050489 CLIENT_SECRET=f0ab34f86bc0f7fe3eda50f2fa815fba node server.js
+$ npm install passport-facebook
