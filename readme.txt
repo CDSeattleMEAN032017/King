@@ -27,6 +27,8 @@ npm install body-parser --save
 npm install cookie-parser --save
 npm install mongoose --save
 
+npm install -S express angular
+
 sudo apt install mongodb-clients
 ./mongod --dbpath="c:\data\db" --rest
 use dbName

@@ -1,11 +1,13 @@
-var express = require("express")
-, path = require("path")
-, port = 8000
-, app = angular.module('app', [])
-, app = express();
-
-app.use(express.static(path.join(__dirname+'./client')));
-
-app.listen(port, function(){
-  console.log(`Server listening on port ${port}`);
-})
+var express  = require( 'express' ),
+    // mongoose = require( 'mongoose' ),
+    // bp       = require('body-parser'),
+    path     = require( 'path' ),
+    root     = __dirname,
+    port     = process.env.PORT || 8000,
+    app      = express();
+app.use( express.static( path.join( root, 'client' )));
+app.use( express.static( path.join( root, 'node_modules' )));
+// app.use(bp.json())
+app.listen( port, function() {
+  console.log( `server running on port ${ port }` );
+});
