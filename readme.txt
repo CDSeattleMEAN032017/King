@@ -27,9 +27,19 @@ npm install body-parser --save
 npm install cookie-parser --save
 npm install mongoose --save
 
-npm install -S express angular
+npm install -S express angular ejs body-parser cookie-parser mongoose mongodb-clients mongodb-server
+
+sudo npm install -g nodemon
+npm config get prefix
+npm install forever -g
+
+$ sudo npm install forever -g   #install
+$ forever start app.js          #start
+$ forever stop app.js           #stop
+$ forever start -l forever.log -o out.log -e err.log app.js   #log
 
 sudo apt install mongodb-clients
+sudo apt install mongodb-server
 ./mongod --dbpath="c:\data\db" --rest
 use dbName
 db.createCollection("COLLECTION_NAME")

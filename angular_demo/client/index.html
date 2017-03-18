@@ -1,103 +1,27 @@
 <!DOCTYPE html>
-<html lang="en" ng-app='myCoolApp'>
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
-    <title>Controlling Users</title>
-    <link rel="stylesheet" href="main.css">
-    <!-- REMEMBER TO INITIALIZE A BOWER PROJECT AND INSTALL ANGULAR! -->
+    <title>Product Factory</title>
+    <link rel="stylesheet" href="partials/style.css">
     <script src="angular/angular.js" charset="utf-8"></script>
-    <style>
-        .left,
-        .right {
-            display: inline-block;
-            width: 45%;
-            border: 1px solid #aaa;
-            border-radius: 4px;
-            vertical-align: top;
-            max-height: 400px;
-            overflow-y: scroll;
-            padding: 10px;
-            margin: 10px;
-        }
-        input, th, td, button{
-          padding: 10px;
-          margin: 10px;
-          border: 1px solid #aaa;
-          border-radius: 4px;
-          color: green;
-        }
-    </style>
+    <script src="angular-route/angular-route.js" charset="utf-8"></script>
+    <!-- MODULE, FACTORY, CONTROLLER CODE -->
+    <script src="order.js" charset="utf-8"></script>
+    <script src="colors.js" charset="utf-8"></script>
+    <script src="friends.js" charset="utf-8"></script>
+    <script src="names.js" charset="utf-8"></script>
+    <script src="products.js" charset="utf-8"></script>
+    <script src="users.js" charset="utf-8"></script>
+    <!-- MODULE, FACTORY, CONTROLLER CODE in file above -->
 </head>
 
 <body>
-    <h1>Controlling Users</h1>
-    <!-- Form to add a new user -->
-    <div ng-controller='usersController'>
-      <form ng-submit='createUser()'>
-        First Name<input type="text" ng-model='user.FirstName' placeholder="First Name">
-        Last Name<input type="text" ng-model='user.LastName' placeholder="Last Name">
-        Email<input type="text" ng-model='user.Email' placeholder="Email">
-        Password<input type="password" ng-model='user.Password' placeholder="Password">
-        Confirm Password<input type="password" ng-model='user.ConfirmPassword' placeholder="Confirm Password">
-        <input type="submit" value="add user">
-      </form>
-      <table>
-        <thead>
-          <tr>
-            <th>First Name</th>
-            <th>Last Name</th>
-            <th>Email</th>
-            <th>Password</th>
-            <th>Actions</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr ng-repeat='userObj in users'>
-            <td>{{userObj.FirstName}}</td>
-            <td>{{userObj.LastName}}</td>
-            <td>{{userObj.Email}}</td>
-            <td>{{userObj.Password}}</td>
-            <td><button ng-click='editUser(userObj)'>Edit</button><button ng-click='adminUser(userObj)'>Admin</button><button ng-click='deleteUser(userObj)'>Delete</button></td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-    <script>
-        var myApp = angular.module('myCoolApp', []);
-        myApp.controller('usersController', ['$scope', function($scope){
-          $scope.createUser = function(){
-            $scope.users.push($scope.user);
-          }
-
-          $scope.deleteUser = function(userToDelete){
-            $scope.users = $scope.users.filter( function(userObj){
-              return userObj !== userToDelete;
-            })
-          }
-
-          $scope.users = [
-            {
-              FirstName: "Charlie",
-              LastName: "Mead",
-              Email: "JavaScript@qq.com",
-              Password: "GJHG8768ih9HHK"
-            },
-            {
-              FirstName: "Mike",
-              LastName: "Hannon",
-              Email: "Python@qq.com",
-              Password: "GJHG87fhfgh8ih9HHK"
-            },
-            {
-              FirstName: "Sara",
-              LastName: "Wong",
-              Email: "Ruby@qq.com",
-              Password: "GJdfwewih9HHK"
-            }
-          ];
-        }]);
-    </script>
+  <div ng-app='app'>
+    <a href="/">Home</a> | <a href="#!/colors">Colors</a> | <a href="#!/friends">Friends</a> | <a href="#!/names">Names</a> | <a href="#!/products">Products</a> | <a href="#!/users">Users</a>
+    <div ng-view=""></div>
+  </div>
 </body>
 
 </html>
