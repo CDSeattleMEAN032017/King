@@ -33,6 +33,9 @@ sudo npm install -g nodemon
 npm config get prefix
 npm install forever -g
 
+npm install json-server --save-dev
+npm install faker
+
 $ sudo npm install forever -g   #install
 $ forever start app.js          #start
 $ forever stop app.js           #stop

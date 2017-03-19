@@ -9,6 +9,9 @@ app.use( express.static( path.join( root, 'client' )));
 app.use( express.static( path.join( root, 'node_modules' )));
 app.use( express.static( path.join( root, 'server' )));
 app.use(bp.json())
+
+require('./server/config/mongoose.js');
+
 app.listen( port, function() {
   console.log( `server running on port ${ port }` );
 });
