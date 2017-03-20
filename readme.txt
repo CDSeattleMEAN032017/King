@@ -139,3 +139,5 @@ CLIENT_ID=784321585050489 CLIENT_SECRET=f0ab34f86bc0f7fe3eda50f2fa815fba node se
 $ npm install passport-facebook
 
 git push --force origin
+git push --all origin
+git push origin --delete master
