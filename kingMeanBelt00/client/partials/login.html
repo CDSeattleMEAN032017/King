@@ -1,0 +1,10 @@
+<div>
+    <h1>Survey</h1>
+    <form ng-submit='login()'>
+        <p>Your Name: <input type="text" ng-model='newUser.name' placeholder="Please enter your name...">
+        <input type="submit" value="Login"></p>
+    </form>
+    <ul>
+        <li ng-repeat='error in errors'>{{ error }}</li>
+    </ul>
+</div>

@@ -1,0 +1,10 @@
+input, button, textarea, table{
+  padding: 10px;
+  margin: 10px;
+  border: 1px solid green;
+  border-radius: 4px;
+  color: green;
+}
+.header{
+  float: right;
+}

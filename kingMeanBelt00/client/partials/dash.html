@@ -1,0 +1,27 @@
+<div ng-controller='sessionController'>
+    <div class="header">
+      Hi, {{curUser.name}}
+      <a href="#!/addQuestion">Create a New Poll</a>
+      <a href="/logout">Logout</a><br>
+      <input type="text" placeholder="Search" ng-model='search.title'>
+    </div>
+    <div ng-controller='questionController'>
+      <h3>Current Polls:</h3>
+
+        <table>
+            <tr>
+                <th>Name</th>
+                <th>Surver Question</th>
+                <th>Date Posted</th>
+                <th>Action</th>
+            </tr>
+            <tr ng-repeat='question in allQuestions | filter:search'>
+                <td>{{ question.name }}</td>
+                <td><a href="#!/showQuestion/{{ question._id }}">{{ question.title }}</a></td>
+                <td>{{ question.created_at | date: "MMM dd yyyy" }}</td>
+                <td><a href="#!/deleteQuestion/{{ question._id }}"><button>Delete</a></td>
+            </tr>
+        </table>
+    </div>
+
+</div>

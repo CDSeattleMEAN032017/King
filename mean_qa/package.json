@@ -1,0 +1,21 @@
+{
+  "name": "King_Mean_Belt",
+  "version": "1.0.0",
+  "description": "Thank you. You are welcome",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "keywords": [King, Mean, Belt],
+  "author": "King",
+  "license": "ISC",
+  "dependencies": {
+    "angular": "^1.6.3",
+    "angular-route": "^1.6.3",
+    "body-parser": "^1.17.1",
+    "express": "^4.15.2",
+    "express-session": "^1.15.1",
+    "mongoose": "^4.9.1"
+  }
+}

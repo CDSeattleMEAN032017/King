@@ -1,0 +1,23 @@
+<div ng-controller='sessionController'>
+  <div class="header">
+    Hi, {{curUser.name}}
+    <a href="#!/addQuestion">Create a New Poll</a>
+    <a href="/logout">Logout</a>
+    <a href='#!/dash'>Cancel</a>
+  </div>
+    <div ng-controller='questionController'>
+    <a href="#!/showQuestion/{{ question._id }}">Back to Question</a>
+        <h2>{{ question.title }}</h2>
+        <h4>{{ question.desc }}</h4>
+
+        <div ng-controller='answerController'>
+            <form ng-submit='addAnswer()'>
+                <p>Add Option: <input type="text" ng-model='answer.content'></p>
+
+                <p><input type="submit" value="Add Option"></p>
+            </form>
+
+            <p ng-repeat='error in errors'>{{ error }}</p>
+        </div>
+    </div>
+</div>

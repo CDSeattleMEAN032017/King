@@ -1,0 +1,27 @@
+<div ng-controler='sessionController'>
+  <div class="header">
+    Hi, {{curUser.name}}
+    <a href="#!/addQuestion">Create a New Poll</a>
+    <a href="/logout">Logout</a>
+    <a href='#!/dash'>Cancel</a>
+  </div>
+    <div ng-controller='questionController'>
+        <h1>{{ question.title }}</h1>
+        <a href="#!/addAnswer/{{ question._id }}"><button>Add Options</a>
+        <h3>Click the Vote button to choose one.</h3>
+        <table>
+          <tr>
+            <th>Name</th>
+            <th>Option</th>
+            <th>Current Count of Votes</th>
+            <th>Action</th>
+          </tr>
+            <tr ng-repeat="answer in question._answers | orderBy:'-likes'">
+            <td>{{ answer._user }}</td>
+            <td>{{ answer.content }}</td>
+            <td>{{ answer.likes }}</td>
+            <td><button ng-click='likeAnswer(answer._id, question._id)'>Vote</button></td>
+            </tr>
+        </table>
+    </div>
+</div>
